@@ -1,0 +1,11 @@
+Package: ChiSquareAutomator
+Type: Package
+Title: Automate Chi-square Testing on Excel Data
+Version: 0.1.0
+Authors@R: person("Your", "Name", email = "your.email@example.com", role = c("aut", "cre"))
+Description: Automates the process of performing Chi-square tests on categorical data stored in Excel files.
+License: MIT
+Imports:
+    openxlsx,
+    readxl,
+    dplyr
