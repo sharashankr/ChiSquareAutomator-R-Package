@@ -50,12 +50,15 @@ run_automation("path/to/Input_File.xlsx")
 
 The function `run_automation()` will handle everything: reading the data, performing chi-square tests, and writing the results back to the file.
 
-Input File Format
+## Input File Format
+
 The input Excel file should contain a worksheet (e.g., "Standard Stat Testing") with the following columns:
 
-Section	Survey Q	QN	Claim	Segment A	A N-size	A#	Segment B	B N-size	B#	p-value
-3.3.1	PB_Q20	1	Claim 1	<65 age patients	456	183	>65 age patients	845	446	
-3.3.2	PB_Q20	2	Claim 2	<65 age patients	456	151	>65 age patients	845	450	
+| Section | Survey Q | QN | Claim   | Segment A         | A N-size | A#  | Segment B         | B N-size | B#  | p-value |
+|---------|----------|----|---------|-------------------|----------|-----|-------------------|----------|-----|---------|
+| 3.3.1   | PB_Q20   | 1  | Claim 1 | <65 age patients  | 456      | 183 | >65 age patients  | 845      | 446 |         |
+| 3.3.2   | PB_Q20   | 2  | Claim 2 | <65 age patients  | 456      | 151 | >65 age patients  | 845      | 450 |         |
+
 The important columns are:
 
 Claim: A description of the claim being tested.
