@@ -46,5 +46,6 @@ library(ChiSquareAutomator)
 
 # Run the automation on your Excel file
 run_automation("path/to/Input_File.xlsx")
+```
 
 The function `run_automation()` will handle everything: reading the data, performing chi-square tests, and writing the results back to the file.
