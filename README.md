@@ -71,14 +71,24 @@ B#: The count of individuals in Segment B supporting the claim.
 p-value: Placeholder column for the computed p-values.
 The run_automation() function will read this data, perform the chi-square test for each row, and write the results to the p-value column.
 
-Functions
-1. load_data(file_path, sheet_name = "Standard Stat Testing")
+## Functions
+
+### 1. `load_data(file_path, sheet_name="Standard Stat Testing")`
+
 This function loads the Excel workbook and converts the specified sheet into a dataframe.
 
-Parameters:
+#### Parameters:
 
-file_path: Path to the Excel file.
-sheet_name: Name of the worksheet to read (default is "Standard Stat Testing").
-Returns:
+- `file_path`: Path to the Excel file.
+- `sheet_name`: Name of the worksheet to read (default is `"Standard Stat Testing"`).
 
-A list containing the workbook object and the dataframe.
+#### Returns:
+
+- A list containing the workbook object and the dataframe.
+```r
+load_data <- function(file_path, sheet_name = "Standard Stat Testing") {
+  wb <- loadWorkbook(file_path)
+  df <- as.data.frame(read.xlsx(wb, sheet = sheet_name))
+  return(list(wb = wb, df = df))
+}
+```
