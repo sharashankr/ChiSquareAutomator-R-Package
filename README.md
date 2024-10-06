@@ -49,3 +49,33 @@ run_automation("path/to/Input_File.xlsx")
 ```
 
 The function `run_automation()` will handle everything: reading the data, performing chi-square tests, and writing the results back to the file.
+
+Input File Format
+The input Excel file should contain a worksheet (e.g., "Standard Stat Testing") with the following columns:
+
+Section	Survey Q	QN	Claim	Segment A	A N-size	A#	Segment B	B N-size	B#	p-value
+3.3.1	PB_Q20	1	Claim 1	<65 age patients	456	183	>65 age patients	845	446	
+3.3.2	PB_Q20	2	Claim 2	<65 age patients	456	151	>65 age patients	845	450	
+The important columns are:
+
+Claim: A description of the claim being tested.
+Segment A: The name of the first group (e.g., <65 age patients).
+A N-size: Total sample size for Segment A.
+A#: The count of individuals in Segment A supporting the claim.
+Segment B: The name of the second group (e.g., >65 age patients).
+B N-size: Total sample size for Segment B.
+B#: The count of individuals in Segment B supporting the claim.
+p-value: Placeholder column for the computed p-values.
+The run_automation() function will read this data, perform the chi-square test for each row, and write the results to the p-value column.
+
+Functions
+1. load_data(file_path, sheet_name = "Standard Stat Testing")
+This function loads the Excel workbook and converts the specified sheet into a dataframe.
+
+Parameters:
+
+file_path: Path to the Excel file.
+sheet_name: Name of the worksheet to read (default is "Standard Stat Testing").
+Returns:
+
+A list containing the workbook object and the dataframe.
